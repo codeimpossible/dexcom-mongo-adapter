@@ -39,9 +39,9 @@ const parse_data = function(json, response) {
     return {
       trend: trend_to_friendly[d.Trend],
       glucose: d.Value,
-      wt: (new Date(wt)).toUTCString(),
-      dt: d.DT ? (new Date(dt)).toUTCString() : undefined,
-      st: d.ST ? (new Date(st)).toUTCString() : undefined,
+      wt: (new Date(wt)).getTime(),
+      dt: d.DT ? (new Date(dt)).getTime() : undefined,
+      st: d.ST ? (new Date(st)).getTime() : undefined,
       get_response: function() {
         return response;
       }

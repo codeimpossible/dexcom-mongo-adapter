@@ -40,6 +40,7 @@ function run() {
     events.forEach(function(json) {
       process.stdout.write(log_date() + 'Saving to mongodb...');
       last_result = JSON.stringify(json);
+      console.log('    ', json.glucose, '@', json.wt);
       const event = new GlucoseEvent(json);
       event.save(function(err) {
         if (err) return process.stderr.write(err.stack);
