@@ -56,7 +56,6 @@ function Api(options) {
   var current_session = {};
 
   function get_latest_glucose_url() {
-    // ?sessionID=<GUID>&minutes=1440&maxCount=1"
     var q = {
       sessionID: current_session.id,
       minutes: OPTIONS.DEXCOM_API.MINUTES,

@@ -1,10 +1,10 @@
 {
   "name": "dexcom-mongo-adapter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Fetches data from Dexcom's webservice and inserts it into mongolab.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node ./scripts/run.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jared Barboza <jared.m.barboza@gmail.com>",

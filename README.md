@@ -16,7 +16,7 @@ originally forked from https://github.com/bewest/share2nightscout-bridge, thanks
 
 ### Install
 
-Currently, you'll need to clone this repo, and run `node ./index.js` to start the service. If you're running this on a vpc via ssh, it's a good idea to start the service in a `screen` - literally: `$ screen node index.js` - so you don't kill it when you close your ssh session (this has saved me hours of grief in the past!).
+Currently, you'll need to clone this repo, and run `node ./index.js` to start the service. If you're running this on a vpc via ssh, it's a good idea to start the service in a `screen` - literally: `$ screen npm start` - so you don't kill it when you close your ssh session (this has saved me hours of grief in the past!).
 
 ### Environment
 
