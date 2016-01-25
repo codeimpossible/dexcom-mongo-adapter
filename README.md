@@ -12,7 +12,7 @@ originally forked from https://github.com/bewest/share2nightscout-bridge, thanks
   successfully uploading data to Dexcom.  You must be able to see the Dexcom
   data in the Dexcom Follow app for the bridge to work.
 * Your Dexcom Sharer username and password
-* A working Nightscout website and Mongo database
+* A working Mongo database
 
 ### Install
 
