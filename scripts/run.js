@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Adapter = require('./../index');
+const config = require('./../src/config');
+
 
 process.stdout.write(log_date() + 'dexcom-mongo-adapter connecting to mongo...');
 
