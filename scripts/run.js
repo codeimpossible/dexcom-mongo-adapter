@@ -18,7 +18,7 @@ const api = new Adapter.DexcomApi({
   LOGIN_PARAMS: login_params
 });
 
-var last_result = '';
+var last_result;
 
 function log_date() {
   return (new Date()).toISOString() + '    ';
@@ -30,14 +30,17 @@ function run() {
     process.stdout.write('done!\n');
     // insert the data to mongolab, unless we get the same result twice
     events.forEach(function(json) {
-      process.stdout.write(log_date() + 'Saving to mongodb...');
-      last_result = JSON.stringify(json);
-      console.log('    ', json.glucose, '@', json.wt);
-      const event = new Adapter.GlucoseEvent(json);
-      event.save(function(err) {
-        if (err) return process.stderr.write(err.stack);
-        process.stdout.write('done!\n');
-      });
+      if (last_result !== json.wt) {
+        process.stdout.write(log_date() + 'Saving to mongodb...');
+        // save the entry to the mongo db
+        last_result = json.wt;
+        console.log('    ', json.glucose, '@', json.wt);
+        const event = new Adapter.GlucoseEvent(json);
+        event.save(function(err) {
+          if (err) return process.stderr.write(err.stack);
+          process.stdout.write('done!\n');
+        });
+      }
     });
   });
 }
