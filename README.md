@@ -14,9 +14,16 @@ originally forked from https://github.com/bewest/share2nightscout-bridge, thanks
 * Your Dexcom Sharer username and password
 * A working Mongo database
 
-### Install
+### Installing
 
-Currently, you'll need to clone this repo, and run `node ./index.js` to start the service. If you're running this on a vpc via ssh, it's a good idea to start the service in a `screen` - literally: `$ screen npm start` - so you don't kill it when you close your ssh session (this has saved me hours of grief in the past!).
+You can get the dexcom mongo adapter from the npm registry!
+
+```bash
+$ npm install -g dexcom-mongo-adapter
+```
+
+## From Git
+Clone this repo, and run `node ./index.js` to start the service. If you're running this on a vpc via ssh, it's a good idea to start the service in a `screen` - literally: `$ screen npm start` - so you don't kill it when you close your ssh session (this has saved me hours of grief in the past!).
 
 ### Environment
 
